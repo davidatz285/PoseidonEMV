@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Poseidon  EMV</string>
+    <string name="tab_text_1">My Cards</string>
+    <string name="tab_text_2">Show My QR</string>
+    <string name="tab_text_3">Add New Card</string>
+    <string name="full_name_text">Full Name :</string>
+    <string name="card_number_text">Card Number :</string>
+    <string name="your_card_number_here">Insert Your Card Number Here</string>
+    <string name="insert_your_full_name_here">Insert Your Full Name Here</string>
+    <string name="card_s_expire_date">Card\'s Expire Date</string>
+    <string name="insert_expire_date">Insert Your Card\'s Expire Date</string>
+</resources>
