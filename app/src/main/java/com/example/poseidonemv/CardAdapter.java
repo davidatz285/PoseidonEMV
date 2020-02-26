@@ -17,6 +17,10 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardHolder> {
     protected List<CardModel> listCard = new LinkedList();
     protected Context context;
 
+    public CardAdapter(List<CardModel> listCard, Context context) {
+        this.listCard = listCard;
+        this.context = context;
+    }
 
     @NonNull
     @Override

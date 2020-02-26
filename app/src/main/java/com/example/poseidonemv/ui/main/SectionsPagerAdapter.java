@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.poseidonemv.AddNewCardFragment;
 import com.example.poseidonemv.R;
+import com.example.poseidonemv.ShowCardListFragment;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
@@ -18,7 +19,7 @@ import com.example.poseidonemv.R;
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @StringRes
-    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2, R.string.tab_text_3};
+    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_3};
     private final Context mContext;
 
     public SectionsPagerAdapter(Context context, FragmentManager fm) {

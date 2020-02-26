@@ -9,4 +9,6 @@
     <string name="insert_your_full_name_here">Insert Your Full Name Here</string>
     <string name="card_s_expire_date">Card\'s Expire Date</string>
     <string name="insert_expire_date">Insert Your Card\'s Expire Date</string>
+    <string name="edit_card_info">Edit Card Info</string>
+    <string name="show_qr_code">Show Qr Code</string>
 </resources>
