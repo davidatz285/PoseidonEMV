@@ -1,34 +1,40 @@
 package com.example.poseidonemv;
 
+import android.app.Dialog;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 
+import com.example.poseidonemv.QrCodeGenerator.Encoder;
+import com.example.poseidonemv.QrCodeGenerator.QRCodeGenerator;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.view.Menu;
-import android.view.MenuItem;
+import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.example.poseidonemv.ui.main.SectionsPagerAdapter;
+import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 
-import java.util.LinkedList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
+    private FragmentManager fm;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        this.fm = getSupportFragmentManager();
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
         ViewPager viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(sectionsPagerAdapter);
@@ -52,6 +58,26 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+
+
+        //initiateQrCode("1234567890123458", "1912","123456" ,"12345");
+
+    }
+    public void initiateQrCode(String creditCardNumber,String MMYY,String CVV,String pin){
+        Dialog myDialog = new Dialog(this);
+        myDialog.setContentView(R.layout.qr_code_layout);
+        ImageView im = myDialog.findViewById(R.id.QR_im);
+        Encoder encoder = new Encoder();
+        String result = encoder.encryptBase64(creditCardNumber, MMYY, CVV, pin);
+        Bitmap bitmap = QRCodeGenerator
+                        .newInstance(this)
+                        .setContent(result)
+                        .setErrorCorrectionLevel(ErrorCorrectionLevel.Q)
+                        .setMargin(2)
+                        .generate();
+        im.setImageBitmap(bitmap);
+        myDialog.show();
     }
 
 
