@@ -25,7 +25,6 @@ public class Encoder {
         return this.encrypt.encrypt(base64,pin);
     }
     public String concateAll(String accountNumber,String expirationDate,String directionaryData){
-        String result = PAYLOAD_FORMAT_INDICATOR;
         this.data = new CreditCardCredentials(accountNumber,expirationDate,directionaryData);
         this.applicationTemplate = this.convertStringToHex()+this.data.concatAllInfo();
         String tag ="61";
