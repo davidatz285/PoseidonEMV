@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        //initiateQrCode("1234567890123458", "1912","123456" ,"12345");
+        //initiateQrCode("1234567890123458", "1912","12345" ,"123456");
 
     }
     public void initiateQrCode(String creditCardNumber,String MMYY,String CVV,String pin){
@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
         ImageView im = myDialog.findViewById(R.id.QR_im);
         Encoder encoder = new Encoder();
         String result = encoder.encryptBase64(creditCardNumber, MMYY, CVV, pin);
+        Log.d("result",result);
         Bitmap bitmap = QRCodeGenerator
                         .newInstance(this)
                         .setContent(result)
