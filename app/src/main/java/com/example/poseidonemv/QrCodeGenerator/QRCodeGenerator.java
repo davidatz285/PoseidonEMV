@@ -17,7 +17,7 @@ public class QRCodeGenerator {
     private int mHeight;
     private int mWidth;
     private ErrorCorrectionLevel errorCorrectionLevel;
-    private String content;
+    private String content = "jcTkPAe87nVCb/tmb+JFg7nKdd4ZlILgrWzwpYd4UVUU4GgaqaH79JcBCke1b4XuVcKfRlSphuQhTB6x+lU7AQ==";
     private int margin;
 
     private QRCodeGenerator(Context context){
