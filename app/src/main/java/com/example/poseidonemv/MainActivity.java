@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        //initiateQrCode("1234567890123458", "1912","12345" ,"123456");
+        initiateQrCode("1234567890123458", "1912","12345" ,"123456");
 
     }
     public void initiateQrCode(String creditCardNumber,String MMYY,String CVV,String pin){
